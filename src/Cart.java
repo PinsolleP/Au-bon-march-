@@ -47,6 +47,21 @@ public class Cart {
         }
         return total;
     }
+
+    public void displayCart(){
+
+        System.out.println("====== PANIER ======");
+        System.out.println();
+
+        for ( Cartitem item : items){
+            System.out.println(item.getProduct().getName() + "   " +
+                               item.getQuantity() + " " +
+                               item.getProduct().getUnite() + "   " +
+                               item.getTotal() + " €");
+        }
+        System.out.println();
+        System.out.println("TOTAL : " + getTotal() + " €");
+    }
 }
 
 
