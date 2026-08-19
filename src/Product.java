@@ -68,5 +68,14 @@ import java.time.LocalDate;
         public void setShelfLifeDays(int shelfLifeDays) {
             this.shelfLifeDays = shelfLifeDays;
         }
+
+        public abstract LocalDate calculateExpirationDate();
+
+        public void updateStock(double quantity){
+            if (quantity < 0 || quantity > stockQuantity){
+                throw new RuntimeException("La quantité demandée est négative ou dépasse le stock");
+            }
+            stockQuantity = stockQuantity - quantity;
+        }
     }
 
