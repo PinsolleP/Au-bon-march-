@@ -10,5 +10,8 @@ public class TestProduct {
         System.out.println(pomme.isRipe());
         System.out.println(pomme.isExpired(LocalDate.now()));
         System.out.println(pomme.daysRemainingBeforeExpiration(LocalDate.now()));
+
+        pomme.updateStock(2);
+        System.out.println(pomme.getStockQuantity());
     }
 }
