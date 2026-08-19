@@ -1,6 +1,9 @@
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 
 public class Vegetables extends Product implements Consumable {
+
+    private int daysToRipen = 2;
 
     public Vegetables(String name, double unitPrice, double stockQuantity, String unite, LocalDate pickingDate, int shelfLifeDays) {
         super(name, unitPrice, stockQuantity, unite, pickingDate, shelfLifeDays);
@@ -8,21 +11,21 @@ public class Vegetables extends Product implements Consumable {
 
     @Override
     public LocalDate calculateExpirationDate() {
-        return null;
+        return pickingDate.plusDays(shelfLifeDays);
     }
 
     @Override
     public boolean isRipe() {
-        return false;
+        return LocalDate.now().isAfter(pickingDate.plusDays(daysToRipen));
     }
 
     @Override
     public boolean isExpired(LocalDate dateVerification) {
-        return false;
+        return dateVerification.isAfter(calculateExpirationDate());
     }
 
     @Override
     public long daysRemainingBeforeExpiration(LocalDate dateVerification) {
-        return 0;
+        return ChronoUnit.DAYS.between(dateVerification, calculateExpirationDate());
     }
 }
