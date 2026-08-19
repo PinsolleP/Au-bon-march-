@@ -69,6 +69,8 @@ import java.time.LocalDate;
             this.shelfLifeDays = shelfLifeDays;
         }
 
+        //Méthodes
+
         public abstract LocalDate calculateExpirationDate();
 
         public void updateStock(double quantity){
