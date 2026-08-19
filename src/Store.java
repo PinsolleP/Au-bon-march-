@@ -35,4 +35,18 @@ public class Store {
         products.add(new Vegetables("Radis noir", 5.00, 10, "pièce", LocalDate.of(2026, 8, 19), 12));
         products.add(new Vegetables("Salsifis", 2.50, 3, "kg", LocalDate.of(2026, 8, 16), 4));
     }
+
+    public void displayStock(){
+
+        System.out.println("====== STOCK DISPONIBLE ======");
+        System.out.println();
+
+        for ( Product product : products){
+            System.out.println(product.getName() + "   " +
+                    product.getStockQuantity() + " " +
+                    product.getUnite() + "   " +
+                    product.getUnitPrice() + " €");
+        }
+
+    }
 }
