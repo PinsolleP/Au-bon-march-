@@ -3,12 +3,12 @@ import java.time.LocalDate;
     public abstract class Product {
 
         //attributs
-        public String name;
-        public double unitPrice;
-        public double stockQuantity;
-        public String unite;
-        public LocalDate pickingDate;
-        public int shelfLifeDays;
+        private String name;
+        private double unitPrice;
+        private double stockQuantity;
+        private String unite;
+        private LocalDate pickingDate;
+        private int shelfLifeDays;
 
         public Product(String name, double unitPrice, double stockQuantity, String unite, LocalDate pickingDate, int shelfLifeDays){
             this.name = name;

@@ -13,13 +13,13 @@ public class Fruit extends Product implements Consumable{
 
     @Override
     public LocalDate calculateExpirationDate() {
-        return pickingDate.plusDays(shelfLifeDays);
+        return getPickingDate().plusDays(getShelfLifeDays());
     }
 
 
     @Override
     public boolean isRipe() {
-        return LocalDate.now().isAfter(pickingDate.plusDays(daysToRipen));
+        return LocalDate.now().isAfter(getPickingDate().plusDays(daysToRipen));
     }
 
     @Override
